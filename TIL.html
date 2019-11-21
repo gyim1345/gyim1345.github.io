@@ -1,0 +1,15 @@
+---
+layout: TIL
+comment: false
+---
+
+<h1>TIL</h1>
+
+<ul>
+    {% for TIL in site.categories.TIL %}
+      <li>
+        <a href="{{site.baseurl}}{{TIL.url}}">{{TIL.title}}</a>
+        <p>{{TIL.meta}}</p>
+      </li>
+    {% endfor %}
+</ul>
