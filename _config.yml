@@ -28,7 +28,7 @@ nav:
   - name:           "About"
     href:           "/about"
   - name:           "TIL"
-    href:           "TIL/"
+    href:           "/TIL"
   - name:           "post"
     href:           "/post"
 
