@@ -9,7 +9,7 @@ layout: TIL
     {% for TIL in site.categories.TIL %}
       <li>
         <a href="{{site.baseurl}}{{TIL.url}}">{{TIL.title}}</a>
-       <!--- <p>{{TIL.desription}}</p>-->
+       <p>({{ TIL.date | date: '%B %d, %Y' }}){{TIL.description}}</p>
       </li>
     {% endfor %}
 </ul>
