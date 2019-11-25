@@ -9,8 +9,10 @@ layout: default
   <div class="TIL-date">
     <time>{{ page.date | date_to_string }}</time>
   </div>
-  {{ content }}
+ <p>{{ content }}</p>
 </div>
+
+
 {% if site.disqus_shortname %}
   {% include disqus_comments.html %}
 {% endif %}
