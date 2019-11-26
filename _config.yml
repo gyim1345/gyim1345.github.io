@@ -31,8 +31,7 @@ nav:
     href:           "/TIL"
   - name:           "post"
     href:           "/post"
-  - name:           "az"
-    href:           "/az"
+
 
 
 sass:
@@ -57,13 +56,7 @@ defaults:
       type:         "TIL"
     values:
       layout:       "TIL"
-    
-  -
-    scope:
-      path:         ""
-      type:         "az"
-    values:
-      layout:       "az"
+
 
 
 gems:
