@@ -1,21 +1,26 @@
 ---
 layout: post
-title: "19-12-01 Week 1"
+title: "Some Notes on Js and Html for Beginners"
+description: let, const, scope, function expression, fucntion declaration, arrow function, object literal, destructuring, forEach, map, filter, Dom, todolist example, etc.
 category: posts
 ---
 
-첫째주<br/>
-이번주에는 블로그를 조금 만지고 그 후에 js 와 html 로 todolist 를 만들면서 그 과정에 js 와 html 에 익숙해지는 과정을 가졌습니다.
+<br/>
+&nbsp;&nbsp; 안녕하세요 코딩 배운지 1주일 됬습니다! 설명들이 조금 부족할수도 있지만 도움 되시길!<br/><br/>
+&nbsp;&nbsp;이번주에는 블로그를 조금 만지고 그 후에 js 와 html 로 todolist 를 만들면서 그 과정에 js 와 html 에 익숙해지는 과정을 가졌습니다. 그 과정에서 필요 했던 정보들을 나열하겠습니다.
+<br/> 
 
-1. let, const
-2. scope
-3.  함수 선언식 vs 함수 표현식
-4. arrow function vs function
-5. 객체 리터럴(object literal)
-6. destructuring
-7. forEach, map, filter
-8. DOM 이란 무엇인가?
-9. todolist 예제 코드
+(P.S. 소재목들 누르시면 제가 봤던 소스로 들어 가실 수 있습니다!) 
+
+1. [let](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/let), [const](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/const)
+2. [scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
+3. [함수 선언식 vs 함수 표현식](https://medium.com/@mandeep1012/function-declarations-vs-function-expressions-b43646042052)
+4. [arrow function vs function]((https://joshua1988.github.io/web-development/translation/essential-es6-features-for-vuejs/))
+5. [객체 리터럴(object literal)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+6. [destructuring](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+7. [forEach, map, filter](https://velog.io/@decody/map-%EC%A0%95%EB%A6%AC)
+8. [DOM 이란 무엇인가?](https://poiemaweb.com/js-dom)
+9. [todolist 예제 코드](https://freshman.tech/todo-list/)
 10. 그 외의 것들
 
 ---
@@ -216,7 +221,7 @@ console.log(arr2)<br/>
 
 ---
 9.[TodoList 예제 코드](https://freshman.tech/todo-list/)
-
+```
 let todoItems = [];
 
 function addTodo(text) {
@@ -230,14 +235,14 @@ function addTodo(text) {
 
   const list = document.querySelector('.js-todo-list');
   list.insertAdjacentHTML('beforeend', `
-    "li class="todo-item" data-key="${todo.id}"
-      input id="${todo.id}" type="checkbox"/
-      label for="${todo.id}" class="tick js-tick"/label
-      span${todo.text}/span
-      button class="delete-todo js-delete-todo"
-        svguse href="#delete-icon"/use/svg
-      /button
-    /li
+    <li class="todo-item" data-key="${todo.id}">
+      <input id="${todo.id}" type="checkbox"/>
+      <label for="${todo.id}" class="tick js-tick"></label>
+      <span>${todo.text}</span>
+      <button class="delete-todo js-delete-todo">
+        <svg><use href="#delete-icon"></use></svg>
+      </button>
+    </li>
   `);
 }
 
@@ -285,8 +290,8 @@ list.addEventListener('click', event => {
   }
 
 });
-"
 
+```
 -----------
 
 10.그 외의 것들
