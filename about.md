@@ -1,21 +1,10 @@
 ---
-title: About
+title: About me
 permalink: /about/
 ---
 
-<p class="heavy-title"><a href="http://github.com/thinker3197/Ink">Ink</a> is a simple & minimalistic theme for <a href="http://jekyllrb.com">Jekyll</a>, a static site generator.</p>
+Name: Gi Bong Yim(임기봉) <br>
+Age: 29 (91/03/28) <br>
+Education: undergraduate EE major at Korea University  <br>
+mail: gyim12@naver.com; gyim1345@gmail.com <br>
 
-
-testing sourcetree111
-
-testing sourcetree222
-
-testing sourcetree333
-<p>testing sourcetree444</p>
-<p>testing sourcetree555
-testing sourcetree666</p>
-testing<p>source</p>tree
-
-
-a
-safasf

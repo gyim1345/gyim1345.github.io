@@ -23,16 +23,17 @@ there are 3 basic types of declaration method in js (js의 3종류 변수 선언
 2. let
 3. const
 
-<a href ="https://hianna.tistory.com/314"><h3>var, let, const difference(차이점)</h3></a>
-var has a scope of function</br> var 의 scope 는 함수 한에서</br>
+<a href ="https://hianna.tistory.com/314" style="color:blue">var, let, const difference(차이점)</a>
+var has a scope of function <br> 
+var 의 scope 는 함수 한에서 <br>
 
-let has a scope of a block { }</br> 
-let 의 scope 는 block {} 안에 </br>
+let has a scope of a block { } <br> 
+let 의 scope 는 block {} 안에 <br>
 
-const has a scope of a block and cannot be changed after first initialization</br>
+const has a scope of a block and cannot be changed after first initialization<br>
 const 의 scope 는 block {} 안이지만 첫 초기화(값할당) 후 변경 불가
 
-scope can be defined as range. so for example </br>
+scope can be defined as range. so for example <br>
 
 `var`
 ``` javascript
@@ -46,10 +47,10 @@ sayHello(); // hello in function!
 console.log(hello); // hello!
 ```
 
-as seen above, declared var inside the function is only available inside the function or when the function is called. </br>
+as seen above, declared var inside the function is only available inside the function or when the function is called. <br>
 So anything declared inside the function is ignored outside the function
 
-위에서 볼 수 있듯이 함수 내에서 선언 된 var는 함수 내에서 또는 함수가 호출 될 때만 사용할 수 있습니다. </br>
+위에서 볼 수 있듯이 함수 내에서 선언 된 var는 함수 내에서 또는 함수가 호출 될 때만 사용할 수 있습니다. <br>
 따라서 함수 내부에서 선언 된 것은 함수 외부에서 무시됩니다.
 
 `let`

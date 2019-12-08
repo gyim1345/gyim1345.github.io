@@ -12,10 +12,10 @@ Title: JavaScript var, let, const, array memory allocation
     
   <p>This post is based on Ethan Nam's JavaScript's Memory model post<br/>이 글은 Ethan Nam의 JavaScript’s Memory Model을 기반으로 한 글입니다.</p>
 
-  <p>Link to the original source: <a href="https://medium.com/@ethannam/javascripts-memory-model-7c972cd2c239" target="_blank">JavaScript’s Memory Model</a> </p>
+  <p>Link to the original source: <a href="https://medium.com/@ethannam/javascripts-memory-model-7c972cd2c239" target="_blank" style="color:blue">JavaScript’s Memory Model</a> </p>
 
   <p>번역본은 <a href="https://junwoo45.github.io/2019-11-04-memory_model/"
-   target="_blank">자바스크립트의 메모리 모델</a> 에서 확인하실 수 있습니다.</p>
+   target="_blank" style="color:blue">자바스크립트의 메모리 모델</a> 에서 확인하실 수 있습니다.</p>
 
 </blockquote>
 
@@ -27,11 +27,11 @@ I will go over how Memory allocation works based on the sources above.<br/>
 <br/>
 
 if you dont know var, let, and const and its difference please click the below
-<p><font color="blue"><a href="/2019/12/07/Var-Let-Const" alt="varletconst">VarLetConst</a></font></p>
+<p><font color="blue"><a href="/2019/12/07/Var-Let-Const" alt="varletconst" style="color:blue"><h3>VarLetConst</h3></a></font></p>
 
 
 -----------------
-Memory Allocation
+### Memory Allocation
 
 when we run the following code:<br>
 밑의 것을 실행할시에:
@@ -148,7 +148,10 @@ myArray = 3 //error
 
 
 --------
+
 Summarization
 - (const, let, var) initializes new address of the value inputed.
-    - if it is a primitive data like int string etc. then it is stored in a call stack
-    - if it is a non primitive data like an array or object, the data values are stored in the heap with the address linked to the callstack
+  - if it is a primitive data like int string etc. then it is stored in a call stack
+  - if it is a non primitive data like an array or object, the data values are stored in the heap with the address linked to the callstack
+- const cant change its address after its first initialization but can change its data
+- primitive data which is located in the call stack has fixed address and changes to the data means change to the address whereas non primitive datas located in the call stack has fixed address but the data inside can be changed which is located in the heap
