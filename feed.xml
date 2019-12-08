@@ -6,11 +6,11 @@ layout: null
 	<channel>
 		<title>{{ site.name | xml_escape }}</title>
 		<link>{{ site.url }}</link>
-		<atom:link href="{{ site.ursl }}/feed.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
 		{% for post in site.posts %}
 			<item>
 				<title>{{ post.title | xml_escape }}</title>
-          
+                <description>{{ post.content | xml_escape }}</description>
 				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
 				<link>{{ site.url }}{{ post.url }}</link>
 				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
