@@ -28,6 +28,8 @@ category: posts
 
 저장된 code 들이 compile 이 되면 compiler os 와 같이 data 들을 보고 어느정도의 크기가 필요한지 미리 계산 해서 callStack 을 만들고 부여합니다.
 
+위의 memory 에 대한 설명들과 매칭을 하자면 storage 에서 code 를 불러 와서 compile 을 할시에 code 에 callstack 이나 data 값들을 ram 에 저장하고 그 휘발성 데이터들은 프로그램을 종료하면 없어지고 프로그램 실행시 저장했던 데이터들은 비휘발성 메모리인 storage 에 저장할것이다.
+
 쉽게 말하자면 Js 에서 메모리를 쓸때 js 가 알아서 주소를 할당을 한다고 생각 하면 됩니다. 
 
 그래서 js 에서
