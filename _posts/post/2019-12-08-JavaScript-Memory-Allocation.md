@@ -5,26 +5,23 @@ description: how memory allocation works on var, let, const and array
 category: posts
 ---
 
-Title: JavaScript var, let, const, array memory allocation
+
+<p><font color="blue"><a href="/2019/12/08/JavaScript-Memory-Allocation-Korean" alt="varletconst" style="color:blue"><h3>한국어로 보기</h3></a></font></p>
 
 
 <blockquote>
     
-  <p>This post is a summary on Ethan Nam's JavaScript's Memory model post<br/>이 글은 Ethan Nam의 JavaScript’s Memory Model을 조금 간추린 글입니다.</p>
+  <p>This post is a summary on Ethan Nam's JavaScript's Memory model post</p>
 
   <p>Link to the original source: <a href="https://medium.com/@ethannam/javascripts-memory-model-7c972cd2c239" target="_blank" style="color:blue">JavaScript’s Memory Model</a> </p>
 
-  <p>번역본은 <a href="https://junwoo45.github.io/2019-11-04-memory_model/"
-   target="_blank" style="color:blue">자바스크립트의 메모리 모델</a> 에서 확인하실 수 있습니다.</p>
-
 </blockquote>
 
+<br>
 
-### JavaScript Memory Model (자바스크립트 메모리 모델)
-I will go over how Memory allocation works based on the sources above.<br/>
-(위에 소스를 보고 메모리 할당이 어떻게 돌아가는지 보겠습니다.)
+I will go over how Memory allocation works based on the source above.<br>
 
-<br/>
+<br>
 
 if you dont know var, let, and const and its difference please click the below
 <p><font color="blue"><a href="/2019/12/07/Var-Let-Const" alt="varletconst" style="color:blue"><h3>VarLetConst</h3></a></font></p>
@@ -33,25 +30,39 @@ if you dont know var, let, and const and its difference please click the below
 -----------------
 ### Memory Allocation
 
+
+JavaScript allocates memory when things (objects, strings, etc.) are created and “automatically” frees it up when they are not used anymore, a process called garbage collection
+
+memory life cycle looks like this:
+
+<p><img src="/img/JavaScript-Memory-Allocation/10.png" alt="memory-life-cycle" /></p>
+
+Allocate memory — memory is allocated by the operating system which allows your program to use it.<br>
+Use memory — uses allocated memory by reading and writing<br>
+Release memory — release memory to free and allocate once more
+
+In Javascript, it automatically allocates memory when values are initially delcared.
+
+------
+
+Lets go into how it works in JS
+
 when we run the following code:<br>
-밑의 것을 실행할시에:
 
 ```javascript
 let myNumber = 23
 ```
 
 - Create a unique identifier for your variable (“myNumber”).<br>
-  변수의 고유 식별자(“myNumber”)를 생성합니다.<Br>
-- Allocate an address in memory (will be assigned at runtime).<br>
-  메모리에 주소를 할당합니다.(런타임에 할당될 것입니다.)<br>
+- Allocate an address in memory.<br>
 - Store a value at the address allocated (23).<br>
-  생성된 주소에 값(value)을 저장합니다(23).<br>
 
 <p><img src="/img/JavaScript-Memory-Allocation/1.jpeg" alt="memory1" /></p>
 
 so 'myNumber' has a address of '0012CCGWH80' where the address value holds a value of '23'
 
-```
+
+```javascript
 let newVar = myNumber
 ```
 
@@ -93,8 +104,6 @@ lets push some data
 myArray.push("first")
 myArray.push("second")
 myArray.push("third")
-myArray.push("fourth")
-myArray.pop()
 ```
 <p><img src="/img/JavaScript-Memory-Allocation/7.jpeg" alt="memory7" /></p>
 

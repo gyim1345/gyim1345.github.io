@@ -136,9 +136,7 @@
 						</xsl:for-each>
 					</table>
 				</div>
-				<div id="footer">
-					<a href="http://websiteseochecker.com/html-sitemap-generator/">Sitemap Generator</a> by <a href="http://WebsiteSeoChecker.com">WebsiteSeoChecker.com</a>
-				</div>
+
 			</body>
 		</html>
 	</xsl:template>
