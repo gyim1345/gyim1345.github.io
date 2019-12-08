@@ -5,8 +5,6 @@ description: how memory allocation works on var, let, const and array
 category: posts
 ---
 
-The memory is where the programs are kept when they are running. it also contains the data needed by the running programs. The memory is build from dram chips. Dram stands for dynamic random access memory. multiple Drams are used together to contain the instructions and data of a program. in contrast to sequetial access memories, such as magnetic tapes, the ram portion of the r
-
 
 
 
