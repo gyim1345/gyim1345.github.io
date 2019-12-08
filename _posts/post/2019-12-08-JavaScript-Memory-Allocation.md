@@ -10,7 +10,7 @@ Title: JavaScript var, let, const, array memory allocation
 
 <blockquote>
     
-  <p>This post is based on Ethan Nam's JavaScript's Memory model post<br/>이 글은 Ethan Nam의 JavaScript’s Memory Model을 기반으로 한 글입니다.</p>
+  <p>This post is a summary on Ethan Nam's JavaScript's Memory model post<br/>이 글은 Ethan Nam의 JavaScript’s Memory Model을 조금 간추린 글입니다.</p>
 
   <p>Link to the original source: <a href="https://medium.com/@ethannam/javascripts-memory-model-7c972cd2c239" target="_blank" style="color:blue">JavaScript’s Memory Model</a> </p>
 
@@ -74,7 +74,7 @@ JavaScript has three portions of memory assigned to a program during execution: 
 <p><img src="/img/JavaScript-Memory-Allocation/4.png" alt="memory4" /></p>
 
 Code Area: area where you write your js code<br>
-Call Stack :stores primitive data(var, let, const data)
+Call Stack :stores primitive data(var, let, const data)<br>
 Heap: stores non primitive data(array object data)
 
 lets make an array
