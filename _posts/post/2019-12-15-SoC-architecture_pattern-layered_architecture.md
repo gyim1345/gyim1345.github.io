@@ -34,18 +34,18 @@ const getMinMaxSum = (arrayNumbers) => {
 ```javascript
 const arrayNumbers =[1,3,5,7,6,2]
 
-const getMin = (sortedArray) =>{
+const getMinofSortedArray = (sortedArray) =>{
     return sortedArray[0];
 }
 
-const getMax = (sortedArray) =>{
+const getMaxofSortedArray = (sortedArray) =>{
     return sortedArray[sortedArray.length];
 }
 
 const getMinMaxSum = (arrayNumbers) => {
     sortedArray = arrayNumbers.sort();
-    let min = getMin(sortedArray);
-    let max = getMax(sortedArray);[sortedArray.length];
+    let min = getMinofSortedArray(sortedArray);
+    let max = getMaxofSortedArray(sortedArray);[sortedArray.length];
     return min+max;
 }
 
