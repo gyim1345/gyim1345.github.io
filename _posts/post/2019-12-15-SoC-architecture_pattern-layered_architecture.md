@@ -13,8 +13,9 @@ category: posts
 
 예를 들어서 우리는 몇개의 수들이 있는데 그것의 최대와 최소의 합을 구하고 싶다고 합시다.
 
-```javascript
+`SoC 가 아닌 간단한 예제`
 
+```javascript
 const arrayNumbers =[1,3,5,7,6,2]
 
 const getMinMaxSum = (arrayNumbers) => {
@@ -26,13 +27,36 @@ const getMinMaxSum = (arrayNumbers) => {
 
 ```
 
-여기서 보면 이 함수에서 sort 를 하고 min 을 구하고 max 를 구하고 min max 의 합을 구합니다. 
+여기서 보면 이 함수에서 sort 를 하고 min 을 구하고 max 를 구하고 min max 의 합을 구합니다.
 물론 간단한 예제라서 이렇게 대충 쓰고 짧게 해도 되겠지만 코드가 길고 난잡하기 시작되면 뭐가 어디 있는지 모르고 정확히 어디서 부터 어디까지의 역할을 하는지 모를 수 도 있으므로 우리는 저 sort 랑 min 구하는 거랑 max 구하는걸 따로 빼서 구성 하고 저 함수에서는 그것들을 불러와서 합만 하는게 SoC 작성의 방향성 입니다.
+
+`SoC 예제`
+```javascript
+const arrayNumbers =[1,3,5,7,6,2]
+
+const getMin = (sortedArray) =>{
+    return sortedArray[0];
+}
+
+const getMax = (sortedArray) =>{
+    return sortedArray[sortedArray.length];
+}
+
+const getMinMaxSum = (arrayNumbers) => {
+    sortedArray = arrayNumbers.sort();
+    let min = getMin(sortedArray);
+    let max = getMax(sortedArray);[sortedArray.length];
+    return min+max;
+}
+
+```
+
+너무나도 간단한 예제라서 SoC 로 구성한게 더 길지만 더 복잡한 예제를 상상하시면 SoC 이 더 보기 쉽습니다.
 
 이제 태이블로 기본적인 코드 부분에서의 SoC 의 계층을 보도록 합시다.
 
 | SoC  |
-|---|
+|:---:|
 | Presentation  |
 | Business  |
 | Resource  |
