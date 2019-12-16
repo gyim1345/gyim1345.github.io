@@ -20,7 +20,7 @@ const arrayNumbers =[1,3,5,7,6,2]
 
 const getMinMaxSum = (arrayNumbers) => {
     sortedArray = arrayNumbers.sort();
-    let min = sortedArray[0]; 
+    let min = sortedArray[0];
     let max = sortedArray[sortedArray.length];
     return min+max;
 }
@@ -31,6 +31,7 @@ const getMinMaxSum = (arrayNumbers) => {
 물론 간단한 예제라서 이렇게 대충 쓰고 짧게 해도 되겠지만 코드가 길고 난잡하기 시작되면 뭐가 어디 있는지 모르고 정확히 어디서부터 어디까지의 역할을 하는지 모를 수도 있으므로 우리는 저 sort 랑 min 구하는 거랑 max 구하는 걸 따로 빼서 구성하고 저 함수에서는 그것들을 불러와서 합만 하는 게 SoC 작성의 방향성입니다.
 
 `SoC 예제`
+
 ```javascript
 const arrayNumbers =[1,3,5,7,6,2]
 
@@ -92,7 +93,7 @@ const getMinMaxSum = (arrayNumbers) => {
 
 그래서 SoC가 잘 구성이 되어 있다면 데이터의 의존성 방향은 지속적으로 같은 방향입니다.
 
-오래된 게임들을 보면 버그가 많고 그것을 고쳐달라고 유저들이 아우성을 쳐도 안 고치고 놔두는 운영자들이 많습니다. 물론 귀찮고 인력 낭비라 그럴 수도 있겠지만 보통 코드들이 너무 방대하게 쌓여 있고 찾기가 너무 어려워서 그럴 가능성이 제일 높습니다. 처음부터 SoC 패턴, 계층화가 제대로 되어 있다면 고치기 쉬웠겠죠? 물론 지켜졌다고 무조건 고치기 쉬운 건 아닐 겁니다! 
+오래된 게임들을 보면 버그가 많고 그것을 고쳐달라고 유저들이 아우성을 쳐도 안 고치고 놔두는 운영자들이 많습니다. 물론 귀찮고 인력 낭비라 그럴 수도 있겠지만 보통 코드들이 너무 방대하게 쌓여 있고 찾기가 너무 어려워서 그럴 가능성이 제일 높습니다. 처음부터 SoC 패턴, 계층화가 제대로 되어 있다면 고치기 쉬웠겠죠? 물론 지켜졌다고 무조건 고치기 쉬운 건 아닐 겁니다!
 
 References:
 
