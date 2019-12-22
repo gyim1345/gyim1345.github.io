@@ -1,0 +1,15 @@
+---
+layout: study
+
+---
+
+<h1>study</h1>
+
+<ul>
+    {% for study in site.categories.study %}
+      <li>
+        <a href="{{site.baseurl}}{{study.url}}">{{study.title}}</a>
+       <p>({{ study.date | date: '%B %d, %Y' }}){{study.description}}</p>
+      </li>
+    {% endfor %}
+</ul>

@@ -31,6 +31,8 @@ nav:
     href:           "/TIL"
   - name:           "post"
     href:           "/post"
+  - name:           "study"
+    href:           "/study"
 
 
 
@@ -56,6 +58,13 @@ defaults:
       type:         "TIL"
     values:
       layout:       "TIL"
+  -
+    scope:
+      path:         ""
+      type:         "study"
+    values:
+      layout:       "study"
+
 
 
 

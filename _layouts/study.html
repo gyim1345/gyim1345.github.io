@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<div class="content study">
+  <h1 class="study-title">{{ page.title }}</h1>
+  <div class="study-date">
+    <time>{{ page.date | date_to_string }}</time>
+  </div>
+ <p>{{ content }}</p>
+</div>
+
+
+{% if site.disqus_shortname %}
+  {% include disqus_comments.html %}
+{% endif %}
