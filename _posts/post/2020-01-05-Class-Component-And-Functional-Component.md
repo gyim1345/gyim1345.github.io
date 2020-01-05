@@ -4,7 +4,6 @@ title: "Class Component And Functional Component"
 description: 
 category: posts
 ---
-## Functional Component와 Class Component
 
 이전 포스팅 [React](../../../../2019/12/29/React)에 나와 있듯이 react 쓰는 이유 중 하나가 component로 설계해서 그것들을 재사용 할 수 있어서 그 사용성 때문에 쓴다. 그 component를 설계 할 때 2종류가 있다. 하나는 Functional Component와 Class Component.
 
@@ -14,7 +13,7 @@ Component란 선택적으로 properties(prop)를 입력값으로 받고 섹션�
 
 아래 예시와 설명은 그전 포스팅 __[React](../../../../2019/12/29/React)__ 에서 대부분 가져온 거다.
 
-### 함수(stateless)) 와 class(statefull) component
+### 함수(stateless) 와 class(statefull) component
 
 함수형은 props를 써서 react 요소를 return을 해줘서 렌더링을 해준다.  
 class component는 logic을 담고 있고 state도 담고 다른 component를 담음으로써 container 역할도 한다.
@@ -134,7 +133,7 @@ class Form extends React.Component {
  render() {
    return (
      <form onSubmit={this.handleSubmit}>
-       <label htmlFor="username">username</label>
+       <h3 id="username">username</h3>
        <input
          type="text"
          name="username"
@@ -148,8 +147,18 @@ class Form extends React.Component {
 
 비제어를 쓸 때는 ref를 쓴다. 보통 state 등을 쓰는 제어 component를 쓴다.
 
+그러나 이제는 생명주기를 쓰기 위해서 class component를 잘 안쓰고 functional component를 더 많이 쓴다. 이것은 다음 포스트 __[React Hook](../../../../2020/01/05/React-Hook)__ 이어 가겠다.
+
 References:
 
 <https://reactjs.org/docs/uncontrolled-components.html>
 
-<https://medium.com/the-andela-way/search?q=react>
+<https://stories.jotform.com/7-reasons-why-you-should-use-react-ad420c634247>
+
+<https://reactjs.org/>
+
+<https://www.w3schools.com/whatis/whatis_react.asp>
+
+<https://velopert.com/3629>
+
+<https://medium.com/the-andela-way/understanding-react-components-37f841c1f3bb>
