@@ -9,9 +9,9 @@ exports.components = {
   "component---src-templates-til-index-template-js": () => import("./../src/templates/til-index-template.js" /* webpackChunkName: "component---src-templates-til-index-template-js" */),
   "component---src-templates-study-index-template-js": () => import("./../src/templates/study-index-template.js" /* webpackChunkName: "component---src-templates-study-index-template-js" */),
   "component---src-templates-page-template-js": () => import("./../src/templates/page-template.js" /* webpackChunkName: "component---src-templates-page-template-js" */),
-  "component---src-templates-study-template-js": () => import("./../src/templates/study-template.js" /* webpackChunkName: "component---src-templates-study-template-js" */),
   "component---src-templates-post-template-js": () => import("./../src/templates/post-template.js" /* webpackChunkName: "component---src-templates-post-template-js" */),
   "component---src-templates-til-template-js": () => import("./../src/templates/til-template.js" /* webpackChunkName: "component---src-templates-til-template-js" */),
+  "component---src-templates-study-template-js": () => import("./../src/templates/study-template.js" /* webpackChunkName: "component---src-templates-study-template-js" */),
   "component---src-templates-index-template-js": () => import("./../src/templates/index-template.js" /* webpackChunkName: "component---src-templates-index-template-js" */)
 }
 
