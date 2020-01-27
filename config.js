@@ -2,7 +2,7 @@
 
 module.exports = {
   url: 'https://gyim1345.github.io/',
-  pathPrefix: '/gyim1345.github.io',
+  pathPrefix: '/',
   title: 'Blog by John Doe',
   subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
   copyright: '© All rights reserved.',
