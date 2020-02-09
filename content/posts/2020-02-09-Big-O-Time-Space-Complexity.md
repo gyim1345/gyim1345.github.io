@@ -15,7 +15,7 @@ date: "2020-02-09"
 
 g O는 특히 최악의 시나리오를 기술하며, 필요한 실행 시간이나 알고리즘이 사용하는 공간을 기술하는 데 사용할 수 있다. 알고리즘에 필요한 정확한 런타임은 쓰는 컴퓨터에 따라 달리 진다. 그래서 우리는 그것을 계산하는 대신에 런타임이 얼마나 빨리 성장하는지 알아보기 위해 개념을 사용한다.
 
-<img src= "static\bigO.JPG" alt="bigO" />
+<img src= "./static/bigO.JPG" alt="bigO" />
 
 bigO는 보통 O(n)으로 표시되고 n은 입력 크기이다. 
 
@@ -95,7 +95,7 @@ function binarySearch(arr, target) {
 ```
 <https://medium.com/employbl/implement-linear-and-binary-search-algorithms-with-javascript-2149997588f0> 에서 가져온 binary search의 예제이다. 반을 나눠서 왼쪽 오른쪽 등을 골라서 찾을 때까지 반복한다.
 
-공간 복잡도는 반대로 위에 말했듯이 메모리에 저장되어 있는 공간이다. 첫 번째 예제를 보자면 입력값이 없고 변수가 하나이다. 고로 O(1). 2번째 예제를 보면 array 랑 total 이 있는데 total 은 입력값 array에 따라 커지므로 O(N)을 갖는다. 3번째 것도 밴환되는 total만 보자면 O(N)의 크기를 갖는다.
+공간 복잡도는 반대로 위에 말했듯이 메모리에 저장되어 있는 공간이다.위에 썼던 첫 번째 예제를 보자면 입력값이 없고 변수가 하나이다. 고로 O(1). 2번째 예제를 보면 array 랑 total 이 있는데 total 은 입력값 array에 따라 커지므로 O(N)을 갖는다. 3번째 것도 변환되는 total만 보자면 O(N)의 크기를 갖는다.
 
 References:  
 
