@@ -3,7 +3,7 @@ layout: post
 title: "Recursive"
 description: 재귀
 template: "post"
-date: "2020-01-19"
+date: "2020-02-09"
 ---
 
 재귀 함수는 스스로 부르는 함수다.
@@ -31,10 +31,9 @@ function factorial(x) {
 
 제한 조건
 s는 길이 4 이상, 20이하인 문자열입니다.
-|입출력| 예|
-|--|--|
-|phone_number	|return
-|"01033334444"	|"*******4444"
+
+입력 phone_number: "01033334444"	
+출력 return : |"*******4444"
 
 ```javascript
 function solution(phone_number, count =0)// count라는 변수를 0이라고

@@ -3,7 +3,7 @@ layout: post
 title: "Big O notation, time and space complexity"
 description: 빅O, 시간 공간 복잡도
 template: "post"
-date: "2020-01-19"
+date: "2020-02-09"
 ---
 
 
@@ -15,7 +15,7 @@ date: "2020-01-19"
 
 g O는 특히 최악의 시나리오를 기술하며, 필요한 실행 시간이나 알고리즘이 사용하는 공간을 기술하는 데 사용할 수 있다. 알고리즘에 필요한 정확한 런타임은 쓰는 컴퓨터에 따라 달리 진다. 그래서 우리는 그것을 계산하는 대신에 런타임이 얼마나 빨리 성장하는지 알아보기 위해 개념을 사용한다.
 
-<img src= "../static/bigO.JPG" alt="bigO" />
+<img src= "static\bigO.JPG" alt="bigO" />
 
 bigO는 보통 O(n)으로 표시되고 n은 입력 크기이다. 
 
