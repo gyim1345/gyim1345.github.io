@@ -5,13 +5,15 @@ template: "study"
 description: '그림으로 배우는 HTTP Network Basic'
 ---
 
-1. WWW을 구성하는 3가지 핵심 요소를 나열하고 각각에 대하여 설명하시오. (16p)  
-- HTML(HyperText Markup Language): 문서 기술 언어
-- HTTP(HyperText Tranfer Protocol): 문서 전송 프로토콜
-- URL(Uniform Resource Locator): 문서 주소 지정 방법
+1. WWW을 구성하는 3가지 핵심 요소를 나열하고 각각에 대하여 설명하시오. (16p) 
+
+HTML(HyperText Markup Language): 문서 기술 언어  
+HTTP(HyperText Tranfer Protocol): 문서 전송 프로토콜  
+URL(Uniform Resource Locator): 문서 주소 지정 방법  
 
 2. http://user:pass@www.example.jp:80/dir/index.htm?uid=1#ch1 과 같은 절대 URI를 구성하는 7가지 구성 요소를 밑줄로 구분해서 설명하시오. (33p)  
-- 스키마 http://  
+
+스키마 http://  
 자격정보 user:pass@  
 서버 주소www.example.jp:  
 서버 포트 80/  
@@ -25,8 +27,9 @@ Host: hackr.jp
 Connection: keep-alive
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 16
-name=ueno&age=37
-- POST 메소드  
+name=ueno&age=37  
+
+POST 메소드  
 /form/entry  URI
 HTTP/1.1 프로토콜 버전  
 Host ... 16 리퀘스트 헤더 필드  
@@ -40,7 +43,6 @@ Content-Type: text/html
 <html>
 ...
 
-- 
 HTTP/1.1 프로토콜 버전 200 상태 코드 OK 상태 코드 설명
 Date: Tue, 10 Jul 2012 06:50:15 GMT
 Content-Length: 362
@@ -208,7 +210,6 @@ clienthello-> 로 ssl 통신 시작
 -> 접속 종료
 
 11. SSL 통신이 지연되는 이유 2가지에 대해 모두 설명하시오. (209p)
-
 통신 속도가 떨어진는데 TCP 접속과 HTTP의 리퀘스트/리스폰스 이외에 SSL에 필요한 통신이 추가 되서 처리해야 할 통신이 증가해서 그렇다.  
 CPU나 메모리 등의 리소스를 다량으로 소비해서 처리 속도가 느려진다. 암호화나 복호하를 위한 계산을 할 필요가 있기 때문이다.
 
