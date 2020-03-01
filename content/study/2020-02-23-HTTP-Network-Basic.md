@@ -1,7 +1,8 @@
 ---
+layout: study
 title: "그림으로 배우는 HTTP Network Basic"
 date: "2020-02-14"
-template: "study"
+template: "post"
 description: '그림으로 배우는 HTTP Network Basic'
 ---
 
