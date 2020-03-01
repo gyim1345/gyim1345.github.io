@@ -6,7 +6,7 @@ module.exports = {
   title: 'Gibongs Blog',
   subtitle: '',
   copyright: '© All rights reserved.',
-  disqusShortname: '',
+  disqusShortname: 'gyim1345-github-io',
   postsPerPage: 4,
   googleAnalyticsId: 'UA-73379983-2',
   useKatex: false,
