@@ -71,9 +71,9 @@ module.exports = {
           query: `
               {
                 allMarkdownRemark(
-                  limit: 1000,
+                  limit: 3000,
                   sort: { order: DESC, fields: [frontmatter___date] },
-                  filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }
+                  filter: { frontmatter: { template: { eq: "post||til" }, draft: { ne: true } } }
                 ) {
                   edges {
                     node {
