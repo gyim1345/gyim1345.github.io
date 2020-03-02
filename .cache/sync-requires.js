@@ -13,8 +13,9 @@ exports.components = {
   "component---src-templates-study-index-template-js": hot(preferDefault(require("/workspace/gyim1345.github.io/src/templates/study-index-template.js"))),
   "component---src-templates-page-template-js": hot(preferDefault(require("/workspace/gyim1345.github.io/src/templates/page-template.js"))),
   "component---src-templates-post-template-js": hot(preferDefault(require("/workspace/gyim1345.github.io/src/templates/post-template.js"))),
-  "component---src-templates-til-template-js": hot(preferDefault(require("/workspace/gyim1345.github.io/src/templates/til-template.js"))),
   "component---src-templates-study-template-js": hot(preferDefault(require("/workspace/gyim1345.github.io/src/templates/study-template.js"))),
+  "component---src-templates-tag-template-js": hot(preferDefault(require("/workspace/gyim1345.github.io/src/templates/tag-template.js"))),
+  "component---src-templates-category-template-js": hot(preferDefault(require("/workspace/gyim1345.github.io/src/templates/category-template.js"))),
   "component---src-templates-index-template-js": hot(preferDefault(require("/workspace/gyim1345.github.io/src/templates/index-template.js")))
 }
 

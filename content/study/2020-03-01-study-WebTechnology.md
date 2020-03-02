@@ -162,10 +162,9 @@ Content-Type: application/xml
 Content-Length: 10
 Transfer-Encoding: chunked
 Content-Type: Text/plain; charset=utf-8
-
 10
 The brow fox ju
-```
+``` 
 -10, 16
 
 16. WWW-Authenticate: Basic realm="Example.com 를 클라이언트 입장에서 해석하시오. (207~208p)  
@@ -204,7 +203,7 @@ cache-control은 no-cache 혹은 max-age
 ```
 -http://example.com/test.html#title
 
-5. <a> <link>에 있는 rel 속성의 의미는 무엇인가? (257p)  
+5. &lt;a&gt; &lt;link&gt;에 있는 rel 속성의 의미는 무엇인가? (257p)  
 -링크하는 쪽과 링크되는 쪽의 리소스가 어떤 관계에 있는지 기술한다. 링크 관계라고 부르기도 한다.
 
 6. 웹 서비스에서 JSON을 활용하는 이점은 무엇인가? (340p)  
