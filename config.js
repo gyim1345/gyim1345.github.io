@@ -42,7 +42,7 @@ module.exports = {
       telegram: '#',
       twitter: '#',
       github: '#',
-      rss: 'https://gyim1345.netlify.com/rss.xml',
+      rss: '/rss.xml',
       vkontakte: '',
       linkedin: '#',
       instagram: '#',
