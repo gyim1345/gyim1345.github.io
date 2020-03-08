@@ -140,7 +140,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
-        trackingIds: [<meta name="google-site-verification" content="6aR1BqWB5_5okrIzfq5O9uPAZZZU9xKKRAL7kmfBuPY" />],
+        trackingIds: [siteConfig.googleAnalyticsId],
         pluginConfig: {
           head: true,
         },
