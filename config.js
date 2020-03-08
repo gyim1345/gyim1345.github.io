@@ -34,7 +34,7 @@ module.exports = {
   ],
   author: {
     name: 'Gibong Yim',
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg',
+    photo: 'static/photo.jpg',
     bio: '',
     contacts: {
       email: '',
