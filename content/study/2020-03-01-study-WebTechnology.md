@@ -1,7 +1,7 @@
 ---
 title: "웹을 지탱하는 기술"
 date: "2020-02-14"
-template: "post"
+template: "study"
 description: '웹을 지탱하는 기술에 대한 문제 풀이. 문제 출처 <https://github.com/itaewon-coding-dojo/knowledge-dojo/tree/master/%EC%9B%B9%EC%9D%84-%EC%A7%80%ED%83%B1%ED%95%98%EB%8A%94-%EA%B8%B0%EC%88%A0> '
 ---
 

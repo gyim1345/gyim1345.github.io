@@ -1,7 +1,7 @@
 ---
 title: "'네트워크 구조' "
 date: "2020-02-09"
-template: "post"
+template: "study"
 description: '네트워크 구조'
 ---
 
