@@ -8,3 +8,6 @@ node_modules
 .sass-cache
 .ruby-version
 command.md
+public/page-data/*
+.cache/
+public/static/*/

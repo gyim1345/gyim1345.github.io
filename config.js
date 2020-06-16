@@ -34,7 +34,7 @@ module.exports = {
   ],
   author: {
     name: 'Gibong Yim',
-    photo: 'static/photo.jpg',
+    photo: '/photo.jpeg',
     bio: '',
     contacts: {
       email: '',
