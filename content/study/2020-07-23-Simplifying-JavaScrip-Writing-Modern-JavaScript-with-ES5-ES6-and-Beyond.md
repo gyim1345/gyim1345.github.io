@@ -73,4 +73,188 @@ const location = "NY"
 return `My name is ${name}. I am ${age} years old. I live in ${location}.`
 ```
 이 더 깔끔하다. 읽는 입장에서와 쓰는 입장에서도이다.
-# 2장
+# 2장 배열로 데이터 컬렉션을 관리하라
+- 배열은 다양한 데이터 요구에 적합하다.
+- 사용되는 기능을 한줄로 줄여준다.
+- 미묘한 버그를 낳는 조작을 줄여주는 새로운 문법도 있다.
+- 유연하다.
+- 배열로 유연한 컬렉션을 생성하라.
+- 펼침 연산자로 정렬에 의한 혼란을 피하라. 
+- 배열에 이터러블이 내장되어 있다.
+  - iterable 이란 현제 위치를 알고 있는 상태에서 컬렉션의 항목을 한번에 하나씩 처리하는 방법이다
+- 펼침 연산자로 배열을 본떠라
+- 맵과 펼침 연산자로 키-값 데이터를 순회하라.
+- object.entries()를 이용하면 객체를 키-값 쌍 배열로 변환하는 명세를 확정했다.
+  - 확정된 명세란 표준 문법에 그 명세 기능을 구현함.
+- 배열 존재 여부는 Includes를 써라. indexOf는 인덱스 찾는데만 쓰자.
+- 펼침 연산자로 배열을 본떠라.
+  - 배열의 유연성으로 조작과 부수 효과에 대한 문제가 생길 수 있으므로 펼침 연산자로 새로 생성해서 조작을 하도록 하자.
+- push() 대신 펼침 연산자를 원본 변경을 피하라.
+  - 순수 함수를 만들기 위해 노력해야한다.
+    - 부수 효과 없는 함수를 순수 함수라고 한다. 의도치 않게 원본을 조작 할 수 있고 이것은 위험하다. 고로 신뢰성을 가질 수 있는 순수 함수를 써야한다.
+- 펼침 연산자로 정렬에 의한 혼란을 피하라.
+    - sort()를 쓰면 원본 배열이 변경이 되므로 이것 또한 spread 연산자로 새로 생성해서 sort를 해라
+``` javascript
+const unorderedStaff = [  ];
+const staffOrderedByYear = [...staff].sort(sortByYears);
+```
+# 3장 특수한 컬렉션을 이용해 코드 명료성을 극대화 하라
+- 객체를 이용해 정적인 키-값을 탐색하라.
+  - 객체는 단순하기 때문에 정적인 정보를 다루기에 훌룡하다.
+  - 빠르고 명료하고 객체 해체 할당도 가능해서 각체로 데이터를 다루는 것이 어느 때보다도 빠르고 간결하다.
+- Object.assign을 이용해 조작하지 않고 객체를 생성하라.
+```JavaScript
+const Obj1 = {
+  author: '123',
+  title: '321',
+  year: 2017,
+  rating: null,
+};
+const Obj2 = {
+  author: 'Joe Morgan',
+  title: 'Simplifying JavaScript',
+};
+    const ObjUpdated = Object.assign({}, Obj1, Obj2);
+    console.log(ObjUpdated); // { author: 'Joe Morgan', title: 'Simplifying JavaScript', year: 2017, rating: null, };
+```
+- 객체 펼침 연산자로 정보를 갱신하라
+```javascript
+  const book = {
+    title: 'Reasons and Persons',
+    author: 'Derek Parfit',
+  };
+  const update = { ...book, year: 1984 };
+  // { title: 'Reasons and Persons', author: 'Derek Parfit', year: 1984}
+```
+- 객체 안의 객체들도 펼침 연산자로 새로 생성하라.
+```javascript
+  const defaultEmployee = {
+    name: {
+      first: '',
+      last: '',
+    },
+    years: 0,
+  };
+  // # START:deepMerge
+  const employee = {
+    ...defaultEmployee,
+    name: {
+      ...defaultEmployee.name,
+    },
+  };
+  // # END:deepMerge
+  employee.name.first = 'joe';
+  return [defaultEmployee.name.first, employee.name.first];//  '', joe
+////////////////////////////////////////////
+  const defaultEmployee = {
+    name: {
+      first: '',
+      last: '',
+    },
+    years: 0,
+  };
+  // # START:deepMerge
+  const employee = {
+    ...defaultEmployee,
+  };
+  // # END:deepMerge
+  employee.name.first = 'joe';
+  return [defaultEmployee.name.first, employee.name.first];// joe, joe
+}
+```
+- 중첩되어 있을 경우에는 객체를 복사하지 않고 참조만 복사하기 때문에 조작으로 인한 잠재적인 문제를 만든다.
+- 새로운 인스턴스를 생성 후 메서드를 바로 이어 가는 것을 chaining이라고 부른다
+```javascript
+[1].map(x=> x).filter(x=> x===1) ... 
+```
+- 맵의 이점들
+  - 항목을 자주 추가하거나 삭제를 하는 경우에는 객체보다 맵을 사용하는것이 적합하다. 
+  - 맵은 함수 또는 객체등을 포함한 모든 값을 넣을 수 있다.
+  - size 속성으로 쉽게 크기를 알아 낼 수 있다.
+  - 순회가 가능해서 바로 순회가 가능하다. 
+- 맵과 펼침 연산자로 키-값 데이터를 순회하라.
+```javascript
+const filters = new Map()
+  .set('색상', '검정색')
+  .set('견종', '래브라도레트리버');
+function checkFilters(filters) {
+  for (const entry of filters) {
+    console.log(entry);
+  }
+}
+// ['색상', '검정색']
+// ['견종', '래브라도레트리버']
+```
+for을 이용한
+```javascript
+function getAppliedFilters(filters) {
+  const applied = [];
+  for (const [key, value] of filters) {
+    applied.push(`${key}:${value}`);
+  }
+  console.log(applied)// [ '색상:검정색', '견종:래브라도레트리버' ]
+  return `선택한 조건은 ${applied.join(', ')} 입니다.`;
+}
+// '선택한 조건은 색상:검정색, 견종:래브라도레트리버 입니다.'
+```
+펼침 연산자를 이용한
+``` javascript
+const filters = new Map()
+  .set('색상', '검정색')
+  .set('견종', '래브라도레트리버');
+  console.log(filter)//  Map { '색상' => '검정색', '견종' => '래브라도레트리버' }
+function getAppliedFilters(filters) {
+  const applied = [...filters].map(([key, value]) => {// 펼침 연산자를 사용하지 않으면 TypeError: filters.map is not a function 가 뜬다.
+    return `${key}:${value}`;
+  });
+    console.log(applied)// [ '색상:검정색', '견종:래브라도레트리버' ]
+  return `선택한 조건은 ${applied.join(', ')} 입니다.`;
+}
+```
+- 맵 이터레이터는 키-값 쌍으로 넘겨준다.
+- 맵 자체에는 sort 메서드가 없지만 펼침 연산자를 사용해서 sort를 사용하면 된다.
+- 맵 생성시 부수 효과를 피하라.
+  - 두맵을 합칠때 부수 효과가 일어 날 수 있으니 하나는 복사 하고 하나는 iterate 해서 새로 생성된것에 넣으면 된다.
+``` javascript
+function applyDefaults(map, defaults) {
+  const copy = new Map([...map]);
+  for (const [key, value] of defaults) {
+    if (!copy.has(key)) {
+      copy.set(key, value);
+    }
+  }
+  return copy;
+```
+그러나 이것 보단 그냥 
+``` javascript
+function applyDefaults(map, defaults) {
+  return new Map [...map, ...defaults];
+```
+하면 된다. 그러면 맵에 있는 중복되는 키 값들이 defaults에 있는 것으로 자동으로 덮어 쓰여진다.
+- 세트를 이용해 고윳값을 관리하라.
+```javascript
+const attribute= ['black', 'black', 'chocolate']
+function getUnique(attributes) {
+  const attributeSet = new Set(attributes); // Set {'black', 'chocolate'};
+  return [...attributeSet]// ['black', 'chocolate'];
+}
+```
+객체에서 특정 값을 중복없이 가져 올려고 할때
+``` javascript
+  const dogs = [
+    {
+      이름: '맥스',
+      색상: '검정색',
+    },
+    {
+      이름: '도니',
+      색상: '검정색',
+    },
+    {
+      이름: '섀도',
+      색상: '갈색',
+    },
+  ];
+  const colors = [...dogs.reduce((colors, { 색상 }) => colors.add(색상), new Set())];
+  return [...colors]; // ['검정색', '갈색'];
+```
