@@ -9,7 +9,7 @@ module.exports = [{
       options: {"plugins":[],"modulePath":"/workspace/gyim1345.github.io/src/cms/index.js"},
     },{
       plugin: require('../node_modules/gatsby-plugin-google-gtag/gatsby-browser.js'),
-      options: {"plugins":[],"trackingIds":["UA-73379983-2"],"pluginConfig":{"head":true}},
+      options: {"plugins":[],"trackingIds":["UA-159911236-1"],"pluginConfig":{"head":true}},
     },{
       plugin: require('../node_modules/gatsby-plugin-manifest/gatsby-browser.js'),
       options: {"plugins":[],"name":"Gibongs Blog","short_name":"Gibongs Blog","start_url":"/","background_color":"#FFF","theme_color":"#F7A046","display":"standalone","icon":"static/photo.jpg"},
