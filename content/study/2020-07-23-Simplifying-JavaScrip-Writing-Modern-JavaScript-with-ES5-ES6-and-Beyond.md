@@ -75,7 +75,7 @@ const location = "NY"
 return "My name is " + name + ". I am " + age + " years old. I live in " + location "."
 ```
 
-이거 보단 밑에 
+이거 보단 밑에 자바스크립트: 코딩의 기술
 
 ``` javascript
 const name = "john";
@@ -309,3 +309,108 @@ function getUnique(attributes) {
   const colors = [...dogs.reduce((colors, { 색상 }) => colors.add(색상), new Set())];
   return [...colors]; // ['검정색', '갈색'];
 ```
+
+
+# 4장 조건문을 깔끔하게 작성하라.
+
+## 거짓 값이 있는 조건문을 축약하라
+
+## 삼항 연산자를 빠르게 데이터를 확인하라
+
+``` javascript
+  if (active) {
+    const display = 'bold'
+  } else {
+    const display = 'normal'
+  }
+```
+
+보단 
+
+```javascript
+
+const display = active ? 'bold' : 'normal';
+
+```
+
+### 유효 범위를 조심하라
+
+``` javascript
+  if (active) {
+    const display = 'bold'
+  } else {
+    const display = 'normal'
+  }
+console.log(display) // referenceError: display is not defined
+
+```
+
+방지하기 위해서 삼항 연산자를 쓰면 된다. 그러나 if 가 2개 이상일때는 삼항 연산자 보단 if 와 return을 쓰도록 하자.
+
+``` javascript
+
+const permissions = title === '부장' ? title === '과장' ? ['근로시간', '초과무승인', '수당'] : ['근로시간', '초과무승인'] :['근로시간'];
+
+```
+
+보단 if 가 보기엔 더 명확하고  위에 let의 변수에 담는것 보단 함수로 만들어서 return 하는게 보기 좋다.
+
+```javascript
+function getTimePermission({ title }) {
+  if(title === '과장') {
+    return ['근로시간', '초과무승인', '수당'];
+  }
+  if(title === '부장') {
+    return ['근로시간', '초과무승인'];
+  }
+  return ['근로시간'];
+}
+
+const permission = getTimePermission({ title: '사원' }); //['근로시간']
+
+```
+
+## 단락 평가(short circuiting)를 이용해 효율성을 극대화 하라
+
+단락 평가 목적은 가장 타당한 정보를 먼저 우치 시켜서 정보 확인을 건너뛰는 것이다.
+
+``` javascript
+function getName(person) {
+  const name = person.name || "unnamed"l
+  return name
+}
+```
+여기선 가장 타당한 정보는 person.name이다. 아니면 unnamed 로 반환되서 falsy한 값을 신경 쓸 필요가 없어서 좋다.
+
+
+그러나 속성이 정의 되어 있지 않은 경우에 에러가 뜰 수 있습니다. 예를 들어서 
+
+```javascript
+const person = {}
+
+const hobby = person.hobbies[0] || 'no hobby'; // TypeError: Cannot read property '0' of undefined
+
+```
+
+그래서 앞에 if조건문으로 있으면 돌려주게끔 만들면 된다.
+
+```javascript
+  function getHobby(person) {
+    if(person.hobbies && person.hobbies.length > 0) {
+      return person.hobbies[0];
+    }
+    return 'no hobby';
+  }
+```
+person.hobbies.length 넣어준 이유는 hobbies가 비어 있을 경우에 저 조건문을 달지 않으면 undefined를 돌려준다. 이것을 방지하기 위해서 넣는 조건문이다.
+
+그리고 삼항 연산자
+
+```javascript
+  function getHobby(person) {
+    const { hobbies } =  person
+    return hobbies && hobbies.length ? hobbies[0] : 'no hobby';
+  }
+```
+
+삼항연산자 조심해야 할 부분은 그전에 말했듯이 조건문이 많아지면 코드가 어려워 지거나 가독성이 오히려 더 떨어 진다.
