@@ -51,3 +51,20 @@ BigInteger(int, int, Random)를 쓰기보단 팩토리 매서드인 BigInteger.p
 상속 보다 컴포지션을 사용하도록 유도하고 불변타입으로 만들려면 이 제약을 지켜야 한다는 점에서 장점이 될 수도 있다.
 
 ### 정적 팩터리 매서드는 프로그래머가 찾기 어렵다.
+
+# (아이템2) 생성자에 매개변수가 많다면 빌더를 고려하자.
+```java
+NutritionFacts cocaCola = new NutritionFacts(240, 8, 100, 0, 35, 27);
+```
+
+보단 
+```java 
+NutritionFacts cocaCola = new NutritionFacts.Builder(240,8).calories(100).sodium(35).carbohydrate(27).build();
+```
+
+나아 보일거다.
+
+빌더 패턴은 명명된 선택적 매개변수를 흉내낸거다.
+빌더 패턴은 계층적으로 설계된 클래스와 함께 쓰기에 좋다.
+
+그래서 생성자나 정적 팩터리가 처리해야 할 매개변수가 많다면 빌더 패턴을 선택하는 게 더 낫다.

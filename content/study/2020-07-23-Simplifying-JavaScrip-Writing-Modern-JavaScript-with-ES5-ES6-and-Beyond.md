@@ -414,3 +414,45 @@ person.hobbies.length 넣어준 이유는 hobbies가 비어 있을 경우에 저
 ```
 
 삼항연산자 조심해야 할 부분은 그전에 말했듯이 조건문이 많아지면 코드가 어려워 지거나 가독성이 오히려 더 떨어 진다.
+
+# 5장 반복문을 단순하게 만들어야한다.
+
+## 화살표 함수로 반복문을 단순하게 만들 수 있다.
+
+- function 키워드 제거
+- 인수를 감싸는 괄호 제거
+- return 키워드 제거
+- 중괄호 제거
+
+```javascript
+
+function getUserInfo(id) {
+  return identifyUserByID(id);
+}
+
+//화살표 표현식
+const getUserInfo = id => identifyUserByID(id);
+```
+
+## 배열 메서드를 반복문을 짧게 작성해야한다.
+
+- for, for...of 문도 좋다고 한다. 꼭 쓰지 말아야 하는건 아니라고 한다.
+- 그래도 어수선하게 코드가 보일 수 있으므로 함수형으로 한줄로 바꿀 수 있다면 바꾸는게 좋다.
+
+```javascript
+const alphabets = ['a', 'b', 'c' ];
+
+for(let i = 0; i < alphabets.length; i += 1) {
+  console.log(alphabets[i]);
+}
+
+```
+
+이거 보단
+
+```javascript
+const alphabets = ['a', 'b', 'c' ];
+alphabets.forEach(alphabet => console.log(alphabet));
+```
+
+가 간결하고 좋다고 하는것이다.
