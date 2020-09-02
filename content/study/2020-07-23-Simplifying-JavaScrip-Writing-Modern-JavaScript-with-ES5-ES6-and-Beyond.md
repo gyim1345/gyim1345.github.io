@@ -456,3 +456,34 @@ alphabets.forEach(alphabet => console.log(alphabet));
 ```
 
 가 간결하고 좋다고 하는것이다.
+
+## 맵 매서드를 비슷한 길이의 배열을 생성하라.
+
+map()는 배열에 있는 값을 가져와서 다른 형식의 값을 반환한다.
+
+```javascript
+const band = [
+  {
+    name: 'corbett',
+    instrument: 'guitar',
+  },
+  {
+    name: 'evan',
+    instrument: 'guitar',
+  },
+  {
+    name: 'sean',
+    instrument: 'bass',
+  },
+  {
+    name: 'brett',
+    instrument: 'drums',
+  },
+];
+
+const instruments = band.map(member => member.instrument);
+//[guitar, guitar, bass, drums]
+```
+
+배열을 반환하므로 실행전에 미리 배열을 선언할 필요가 없다.  
+원본 배열과 같은 길이의 배열이 생성된다.  

@@ -68,3 +68,43 @@ NutritionFacts cocaCola = new NutritionFacts.Builder(240,8).calories(100).sodium
 빌더 패턴은 계층적으로 설계된 클래스와 함께 쓰기에 좋다.
 
 그래서 생성자나 정적 팩터리가 처리해야 할 매개변수가 많다면 빌더 패턴을 선택하는 게 더 낫다.
+
+# (아이템3) private 생성자나 열거 타입으로 싱글턴임을 보증하라
+
+## 싱글턴 
+
+- 인스턴스를 오직 하나만 생성할 수 있는 클래스
+
+- 단점: 테스트 하기 어렵다.
+
+만드는 방식은 생성자는 private로 감춰두고 유일한 인스턴스에 접근 할 수 있는 수단으로 pubblic static 맴버를 하나 마련해둔다.
+
+```java
+public class Elvis {
+  public static final Elvis Instance = new Elvis();
+  private Elvis() {...}
+
+  public void leaveTheBuilding() {...}
+}
+```
+private 생성자는 public static final 필드인 Elvis.Instance를 초기화 할대 딱 한번만 호출된다.
+
+이 방식은 singleton 인것을 명확하게 알 수 있다. 또한 간결하다.
+
+
+```java
+public class Elvis {
+  private static final Elvis Instance = new Elvis();
+  private Elvis() {...}
+  public static Elvis getInsstance() {return INSTANCE;}
+  
+  public void leaveTheBuilding() {...}
+}
+```
+
+위는 다른 방식으로 만든것인데, 정적 팰터리 메서드를 public static 맴버로 제공한다. Elvis.getInstance는 항상 같은 객체의 참조를 반환하므로 제2의 ELvis인스턴스란 결코 만들어지지지 않는다.
+
+위 방식 장점
+- api를 바꾸지 않고도 싱글턴이 아니게 변경할 수 있다.
+- 정적 팩터리를 제네릭 싱글턴 팩터리로 만들수 있다.
+- 정적 팩터리의 메서드 참조를 공급자로 사용할 수 있다.
