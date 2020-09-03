@@ -487,3 +487,41 @@ const instruments = band.map(member => member.instrument);
 
 배열을 반환하므로 실행전에 미리 배열을 선언할 필요가 없다.  
 원본 배열과 같은 길이의 배열이 생성된다.  
+
+## filter()와 find()로 데이터의 부분집합을 생성하라
+
+```javascript
+  const band = [
+  {
+    name: 'corbett',
+    instrument: 'guitar',
+  },
+  {
+    name: 'evan',
+    instrument: 'guitar',
+  },
+  {
+    name: 'sean',
+    instrument: 'bass',
+  },
+  {
+    name: 'brett',
+    instrument: 'drums',
+  },
+];
+
+band.find(person => person.instrument === 'guitar'); // { name: 'corbett', instrument: 'guitar' }
+
+band.filter(person => person.instrument === 'guitar');// [{ name: 'corbett', instrument: 'guitar' }, { name: 'evan', instrument: 'guitar' }]
+```
+
+find는 리스트를 순회하면서 조건에 만족하는 첫번째 값을 반환한다.  
+filter은 리스트를 순회하면서 조건에 만족하는 모든 값들을 배열에 담에서 반환한다.
+
+## forEach()로 동일한 동작을 적용하라
+
+```javascript
+  band.forEach(person => band.toUppserCase());
+```
+
+forEach는 반환값이 없다. 그래서 부수효과를 기대할때 쓸때가 많다. 이것을 쓰는 가장 큰 이유는 체이닝 과정에서 다른 배열 메서드와 결합할 수 있기 때문이다.
