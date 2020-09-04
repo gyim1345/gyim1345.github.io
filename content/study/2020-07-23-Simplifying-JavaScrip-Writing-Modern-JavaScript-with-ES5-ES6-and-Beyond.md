@@ -525,3 +525,48 @@ filter은 리스트를 순회하면서 조건에 만족하는 모든 값들을 �
 ```
 
 forEach는 반환값이 없다. 그래서 부수효과를 기대할때 쓸때가 많다. 이것을 쓰는 가장 큰 이유는 체이닝 과정에서 다른 배열 메서드와 결합할 수 있기 때문이다.
+
+## 체이닝으로 메서드를 연결하라
+
+체이닝이란 값을 다시 할당하지 않고 반환된 객체에 메서드를 즉시 호출하는것이다.
+
+
+```javascript
+
+const numbers = [1,2,3,4,5];
+
+const chainedNumbers = numbers.map(number => number *2).filter(number=> number % 3 === 0).forEach(number=> console.log(number)); //6
+
+```
+
+Promise에 대한 비동기적 데이터를 가져올떄도 쓰인다.
+
+```javascript
+new Promise(function(resolve, reject) {
+  setTimeout(() => resolve(1), 1000); // (*)
+}).then(function(result) { // (**)
+  alert(result); // 1
+  return result * 2;
+}).then(function(result) { // (***)
+  alert(result); // 2
+  return result * 2;
+}).then(function(result) {
+  alert(result); // 4
+  return result * 2;
+});
+```
+
+## reduce()로 배열 데이터를 변환하라
+
+reduce() 메서드를 사용해 원본 배열과는 크기와 형대가 다른 새로운 배열을 생성할 수 있따.
+
+reduce로 배열을 반환하지 않고 다른 형태의 데이터로 반환할 수 있다.
+
+reduce는 배열을 순회 하면서 누적값을 carry한다. 반환한다.
+
+```javascript
+const numbers = [1,2,3,4,5];
+
+const string = numbers.reduce((acc, cur) => acc + curr.toString(), "");//'12345';
+```
+
