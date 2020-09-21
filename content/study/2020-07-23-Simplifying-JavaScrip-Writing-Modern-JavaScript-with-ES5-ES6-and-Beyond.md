@@ -570,3 +570,35 @@ const numbers = [1,2,3,4,5];
 const string = numbers.reduce((acc, cur) => acc + curr.toString(), "");//'12345';
 ```
 
+## for...in 문과 for..of 문을 반복문을 정리하라
+
+for... of 는 객체 iterable이 안된다.
+```javascript
+
+> const person1 = {
+  name: 'name',
+  age: 20,
+  a: function() {
+    console.log("function a")
+    }
+ }
+
+for (const info of person1) { console.log(info)}
+
+Thrown:
+TypeError: person1 is not iterable
+```
+
+for... in 은 가능하다
+```javascript
+for (const info in person1) { console.log(info)}
+//name
+//age
+//a
+//undefined
+```
+
+# 6장 매개변수와 return 문을 정리하라
+
+## 매개변수 기본값을 생성하라
+
